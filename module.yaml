@@ -1,0 +1,23 @@
+module:
+  name:            digraph_debug_module
+
+routing:
+  paths:
+    digraph_debug: ${module.path}/routes
+
+# mungerhooks:
+#   render:
+#     output:
+#       post:
+#         digraph_debug: ${module.namespace}\DebugMunger
+
+mungers:
+  render:
+    999-debug:     ${module.namespace}\DebugMunger
+
+permissions:
+  url:
+    'debug/*':
+      - allow all
+    '*':
+      - allow user debug
