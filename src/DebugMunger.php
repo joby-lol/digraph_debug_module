@@ -1,6 +1,8 @@
 <?php
 namespace Digraph\Modules\digraph_debug_module;
 
+use Flatrr\Config\Config;
+
 class DebugMunger extends \Digraph\Mungers\AbstractMunger
 {
     protected function dump_text_html(&$package)
@@ -9,13 +11,15 @@ class DebugMunger extends \Digraph\Mungers\AbstractMunger
         echo "<h1>Debug dump from digraph_debug_module</h1>";
         echo "<p>The following is being produced after normal execution by the digraph_debug_module. This module should <strong>never</strong> be used in production.</p>";
         echo "<h2>Package contents</h2>";
-        var_dump($package->get());
+        $p = new Config($package->get());
+        $p['response.content'] = '[trimmed for output]';
+        echo "<pre>".htmlentities(print_r($p->yaml(), true))."</pre>";
         echo "<h2>Package log</h2>";
-        var_dump($package->log());
+        echo "<pre>".htmlentities(implode(PHP_EOL, $package->log()))."</pre>";
         echo "<h3>CMS log</h3>";
-        var_dump($package->cms()->log());
+        echo "<pre>".htmlentities(implode(PHP_EOL, $package->cms()->log()))."</pre>";
         echo "<h1>CMS configuration as YAML</h1>";
-        echo "<pre>".$package->cms()->config->yaml()."</pre>";
+        echo "<pre>".htmlentities($package->cms()->config->yaml())."</pre>";
     }
 
     protected function doMunge(&$package)
