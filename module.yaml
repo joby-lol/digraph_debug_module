@@ -1,9 +1,9 @@
 module:
-  name:            digraph_debug_module
+  name:                digraph_debug_module
 
 routing:
   paths:
-    digraph_debug: ${module.path}/routes
+    digraph_debug:     ${module.path}/routes
 
 # mungerhooks:
 #   render:
@@ -13,7 +13,7 @@ routing:
 
 mungers:
   render:
-    999-debug:     ${module.namespace}\DebugMunger
+    999-debug:         ${module.namespace}\DebugMunger
 
 permissions:
   url:
@@ -21,3 +21,15 @@ permissions:
       - allow all
     '*':
       - allow user debug
+
+# settings regarding urls
+urls:
+  # aliases
+  aliases:
+    '?arg_parent/':    home
+  # rules for naming URLs
+  names:
+    # rules for noun/verb combinations with common nouns
+    common:
+      'debug/display': Debug tools
+      'debug/*':       ?verb

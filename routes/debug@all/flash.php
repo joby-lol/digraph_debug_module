@@ -1,6 +1,6 @@
 <p>This page tests the flash functionality of the Session class and notifications helper.<p>
 <?php
-$session = \Digraph\Session\Session::getInstance();
+$session = \Digraph\Users\Session::getInstance();
 
 $last = $session->getFlash('test');
 echo "<p>The last pageview's number was: $last</p>";
