@@ -10,6 +10,8 @@ foreach (glob(__DIR__.'/*.php') as $file) {
     $verbs[] = $file;
 }
 
+echo "<ul>";
 foreach ($verbs as $verb) {
     echo "<li>".$this->helper('urls')->parse('debug/'.$verb)->html()."</li>";
 }
+echo "</ul>";
