@@ -1,6 +1,10 @@
 <?php
 echo "<ul>";
-sitemap($this->cms()->read('home'), $this->cms());
+$search = $this->cms()->factory()->search();
+$search->where('${digraph.parents.0} is null');
+foreach ($search->execute() as $root) {
+    sitemap($root, $this->cms());
+}
 echo "</ul>";
 
 function sitemap($obj, &$cms, $max=5, $depth=1)

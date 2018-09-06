@@ -1,4 +1,3 @@
-<h2>Object raw data dump</h2>
 <?php
 use Digraph\DataObject\FieldMutator\FieldMutatorArrayInterface;
 
