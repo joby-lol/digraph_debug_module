@@ -8,7 +8,7 @@ routing:
 actions:
   proper:
     '*':
-      dump:                  ?noun/dump
+      dump:                  !noun/dump
 
 # mungerhooks:
 #   render:
@@ -38,7 +38,7 @@ urls:
       '*/dump':              Data dump
     common:
       'debug/display':       Debug tools
-      'debug/*':             ?verb
+      'debug/*':             !verb
       'debug/sitemap':       Site map
       'debug/session':       Session dump
       'debug/root':          Become root
