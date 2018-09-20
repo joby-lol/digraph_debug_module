@@ -5,6 +5,11 @@ routing:
   paths:
     digraph_debug:           ${module.path}/routes
 
+actions:
+  proper:
+    '*':
+      dump:                  ?noun/dump
+
 # mungerhooks:
 #   render:
 #     output:
@@ -30,7 +35,7 @@ urls:
   # rules for naming URLs
   names:
     proper:
-      '*/dump':              Unstructured data dump of ?name
+      '*/dump':              Data dump
     common:
       'debug/display':       Debug tools
       'debug/*':             ?verb
