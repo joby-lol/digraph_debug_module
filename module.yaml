@@ -20,12 +20,17 @@ mungers:
   render:
     999-debug:               ${module.namespace}\DebugMunger
 
+groups:
+  root@system:               [root]
+
 permissions:
   url:
+    '*':
+      - deny all
+      - allow group root
+      - allow user root@system
     'debug/*':
       - allow all
-    '*':
-      - allow user debug
 
 # settings regarding urls
 urls:
