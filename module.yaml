@@ -48,3 +48,4 @@ urls:
       'debug/session':       Session dump
       'debug/root':          Become root
       'debug/notifications': Notification demo
+      'debug/user':          User object info
