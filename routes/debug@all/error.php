@@ -1,3 +1,4 @@
+<p>This content should not be visible.</p>
 <?php
 $this->cms()->helper('notifications')->confirmation('This page intentionally throws a dummy exception to test error handling and logging.');
 
