@@ -1,27 +1,21 @@
 module:
-  name:                      digraph_debug_module
+  name: digraph_debug_module
 
 routing:
   paths:
-    digraph_debug:           ${module.path}/routes
+    digraph_debug: ${module.path}/routes
 
 actions:
   proper:
     '*':
-      dump:                  !noun/dump
-
-# mungerhooks:
-#   render:
-#     output:
-#       post:
-#         digraph_debug:     ${module.namespace}\DebugMunger
+      dump: !id/dump
 
 mungers:
   render:
-    999-debug:               ${module.namespace}\DebugMunger
+    999-debug: ${module.namespace}\DebugMunger
 
 groups:
-  root@system:               [root]
+  root@system: [root]
 
 permissions:
   url:
@@ -36,16 +30,16 @@ permissions:
 urls:
   # aliases
   aliases:
-    '?arg_parent/':          home
+    '?arg_parent/': home
   # rules for naming URLs
   names:
     proper:
-      '*/dump':              Data dump
+      '*/dump': Raw data
     common:
-      'debug/display':       Debug tools
-      'debug/*':             !verb
-      'debug/sitemap':       Site map
-      'debug/session':       Session dump
-      'debug/root':          Become root
+      'debug/display': Debug tools
+      'debug/*': !verb
+      'debug/sitemap': Site map
+      'debug/session': Session dump
+      'debug/root': Become root
       'debug/notifications': Notification demo
-      'debug/user':          User object info
+      'debug/user': User object info
