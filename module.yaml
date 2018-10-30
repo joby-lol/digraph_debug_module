@@ -9,6 +9,7 @@ actions:
   proper:
     '*':
       dump: !id/dump
+      editraw: !id/editraw
 
 mungers:
   render:
@@ -26,15 +27,11 @@ permissions:
     'debug/*':
       - allow all
 
-# settings regarding urls
-urls:
-  # aliases
-  aliases:
-    '?arg_parent/': home
-  # rules for naming URLs
-  names:
+strings:
+  urls:
     proper:
-      '*/dump': Raw data
+      '*/dump': data dump
+      '*/editraw': raw edit
     common:
       'debug/display': Debug tools
       'debug/*': !verb
@@ -43,3 +40,10 @@ urls:
       'debug/root': Become root
       'debug/notifications': Notification demo
       'debug/user': User object info
+
+# settings regarding urls
+urls:
+  # aliases
+  aliases:
+    '?arg_parent/': home
+  # rules for naming URLs
