@@ -8,8 +8,8 @@ routing:
 actions:
   proper:
     '*':
-      dump: !id/dump
-      editraw: !id/editraw
+      rawdump: !id/dump
+      rawedit: !id/editraw
 
 mungers:
   render:
@@ -30,7 +30,7 @@ permissions:
 strings:
   urls:
     proper:
-      '*/dump': data dump
+      '*/dump': raw dump
       '*/editraw': raw edit
     common:
       'debug/display': Debug tools

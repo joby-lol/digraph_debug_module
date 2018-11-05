@@ -6,6 +6,9 @@ $p = new Flatrr\Config\Config($noun->get());
 
 echo "<pre>".htmlentities($p->yaml())."</pre>";
 
+echo "<h3>Publication state</h3>";
+echo "<ul><li>".($noun->isPublished()?'published':'unpublished')."</li></ul>";
+
 if ($parents = $noun->parents()) {
     echo "<h3>Parents</h3>";
     echo "<ul>";
