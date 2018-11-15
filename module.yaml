@@ -8,8 +8,8 @@ routing:
 actions:
   proper:
     '*':
-      rawdump: !id/dump
-      rawedit: !id/editraw
+      rawdump: !id/rawdump
+      rawedit: !id/rawedit
 
 mungers:
   render:
@@ -26,12 +26,16 @@ permissions:
       - allow user root@system
     'debug/*':
       - allow all
+    '*/rawdump':
+      - allow group webmaster
+    '*/rawedit':
+      - allow group webmaster
 
 strings:
   urls:
     proper:
-      '*/dump': raw dump
-      '*/editraw': raw edit
+      '*/rawdump': raw dump
+      '*/rawedit': raw edit
     common:
       'debug/display': Debug tools
       'debug/*': !verb
