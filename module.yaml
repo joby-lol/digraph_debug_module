@@ -40,6 +40,7 @@ strings:
       'debug/root': Become root
       'debug/notifications': Notification demo
       'debug/user': User object info
+      'debug/userid': Become any user
 
 # settings regarding urls
 urls:
