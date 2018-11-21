@@ -1,10 +1,6 @@
 module:
   name: digraph_debug_module
 
-routing:
-  paths:
-    digraph_debug: ${module.path}/routes
-
 actions:
   proper:
     '*':
@@ -15,15 +11,8 @@ mungers:
   render:
     999-debug: ${module.namespace}\DebugMunger
 
-groups:
-  root@system: [root]
-
 permissions:
   url:
-    '*':
-      - deny all
-      - allow group root
-      - allow user root@system
     'debug/*':
       - allow all
     '*/rawdump':
@@ -44,10 +33,3 @@ strings:
       'debug/root': Become root
       'debug/notifications': Notification demo
       'debug/user': User object info
-
-# settings regarding urls
-urls:
-  # aliases
-  aliases:
-    '?arg_parent/': home
-  # rules for naming URLs
