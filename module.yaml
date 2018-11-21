@@ -33,4 +33,7 @@ strings:
       'debug/root': Become root
       'debug/notifications': Notification demo
       'debug/user': User object info
+<<<<<<< HEAD
       'debug/userid': Manually set user id
+=======
+>>>>>>> 3a9c2ed2f69f1901e60a8e704ca8e26bdf325e53
