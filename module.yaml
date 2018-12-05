@@ -1,12 +1,6 @@
 module:
   name: digraph_debug_module
 
-actions:
-  proper:
-    '*':
-      rawdump: !id/rawdump
-      rawedit: !id/rawedit
-
 mungers:
   render:
     999-debug: ${module.namespace}\DebugMunger
@@ -15,16 +9,9 @@ permissions:
   url:
     'debug/*':
       - allow all
-    '*/rawdump':
-      - allow group webmaster
-    '*/rawedit':
-      - allow group webmaster
 
 strings:
   urls:
-    proper:
-      '*/rawdump': raw dump
-      '*/rawedit': raw edit
     common:
       'debug/display': Debug tools
       'debug/*': !verb
