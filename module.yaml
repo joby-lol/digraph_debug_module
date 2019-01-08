@@ -5,19 +5,29 @@ mungers:
   render:
     999-debug: ${module.namespace}\DebugMunger
 
+actions:
+  categorical:
+    _controlpanel:
+      debug: _debug/display
+
+navigation:
+  parents:
+    common:
+      _debug/display: _controlpanel/display
+
 permissions:
   url:
-    'debug/*':
+    '_debug/*':
       - allow all
 
 strings:
   urls:
     common:
-      'debug/display': Debug tools
-      'debug/*': !verb
-      'debug/sitemap': Site map
-      'debug/session': Session dump
-      'debug/root': Become root
-      'debug/notifications': Notification demo
-      'debug/user': User object info
-      'debug/userid': Manually set user id
+      '_debug/display': Debug tools
+      '_debug/*': !verb
+      '_debug/sitemap': Site map
+      '_debug/session': Session dump
+      '_debug/root': Become root
+      '_debug/notifications': Notification demo
+      '_debug/user': User object info
+      '_debug/userid': Manually set user id
