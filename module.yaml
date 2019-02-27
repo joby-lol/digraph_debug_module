@@ -31,3 +31,4 @@ strings:
       '_debug/notifications': Notification demo
       '_debug/user': User object info
       '_debug/userid': Manually set user id
+      '_debug/loginbounce': Login bounce with requireAuth()
