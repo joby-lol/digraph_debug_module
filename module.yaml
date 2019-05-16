@@ -2,8 +2,10 @@ module:
   name: digraph_debug_module
 
 mungers:
-  render:
-    999-debug: ${module.namespace}\DebugMunger
+  cleanup:
+    debug:
+      weight: 999
+      class: ${module.namespace}\DebugMunger
 
 actions:
   categorical:
