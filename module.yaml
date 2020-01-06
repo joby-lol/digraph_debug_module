@@ -26,7 +26,7 @@ strings:
   urls:
     common:
       '_debug/display': Debug tools
-      '_debug/*': !verb
+      '_debug/*': "!verb"
       '_debug/sitemap': Site map
       '_debug/session': Session dump
       '_debug/root': Become root
