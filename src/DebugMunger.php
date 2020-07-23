@@ -5,7 +5,7 @@ use Flatrr\Config\Config;
 
 class DebugMunger extends \Digraph\Mungers\AbstractMunger
 {
-    protected function dump_text_html(&$package)
+    protected function dump_text_html($package)
     {
         echo "<div id='digraph-debug-dump'>";
         echo "<hr>";
@@ -24,7 +24,7 @@ class DebugMunger extends \Digraph\Mungers\AbstractMunger
         echo "</div>";
     }
 
-    protected function doMunge(&$package)
+    protected function doMunge($package)
     {
         $mime = $package['response.mime'];
         $fn = 'dump_'.preg_replace('/[^a-z]+/', '_', $mime);
