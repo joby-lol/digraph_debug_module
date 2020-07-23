@@ -3,6 +3,5 @@
     you to the login page, and back here once you're signed in.
 </p>
 <?php
-$package->noCache();
+$package->cache_noStore();
 $this->helper('users')->requireAuth($package);
- ?>

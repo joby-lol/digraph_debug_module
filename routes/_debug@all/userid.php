@@ -1,6 +1,6 @@
 <p>Use this form to manually set your user id</p>
 <?php
-$package->noCache();
+$package->cache_noStore();
 $form = new Formward\Form('UserID');
 
 $form['userid'] = new Formward\Fields\Input('UserID');
